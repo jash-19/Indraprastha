@@ -47,7 +47,10 @@ margin:auto;
 }
 
 nav h2{
-font-size:20px;
+font-size:28px;
+font-weight:700;
+letter-spacing:1px;
+animation:fadeIn 1.2s ease;
 }
 
 nav ul{
@@ -92,7 +95,18 @@ font-size:42px;
 margin-bottom:10px;
 animation: fadeUp 1.2s ease;
 }
-
+  
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(-20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+  
 @keyframes fadeUp{
 from{
 opacity:0;
@@ -103,7 +117,7 @@ opacity:1;
 transform:translateY(0);
 }
 }
-  
+    
 .hero p{
 font-size:18px;
 margin-bottom:20px;
@@ -169,14 +183,15 @@ gap:15px;
 
 .gallery img{
 width:100%;
-height:200px;
+height:220px;
 object-fit:cover;
 border-radius:10px;
-transition:0.3s;
+transition:0.4s;
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
 }
 
 .gallery img:hover{
-transform:scale(1.05);
+transform:scale(1.06);
 }
 
 /* ABOUT */
@@ -342,6 +357,14 @@ font-size:28px;
 
 <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab">
 
+<img src="https://images.unsplash.com/photo-1581091215367-59ab6d7c38e3">
+
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd">
+
+<img src="https://images.unsplash.com/photo-1590650153855-d9e808231d41">
+
+<img src="https://images.unsplash.com/photo-1513828583688-c52646db42da">
+
 </div>
 
 </section>
@@ -405,5 +428,6 @@ menu.classList.toggle("active");
 
 </body>
 </html>
+
 
 

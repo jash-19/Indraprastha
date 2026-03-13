@@ -72,7 +72,14 @@ display:flex;
 nav ul li{
 margin-left:15px;
 }
-
+  
+nav ul li a{
+display:block;
+padding:12px 20px;
+width:100%;
+text-align:center;
+}
+  
 nav a{
 color:white;
 text-decoration:none;
@@ -263,13 +270,15 @@ display:block;
 
 nav ul{
 position:absolute;
-top:70px;
+top:60px;
 left:0;
 width:100%;
 background:#1e293b;
 flex-direction:column;
 align-items:center;
-display:none;
+max-height:0;
+overflow:hidden;
+transition:max-height 0.4s ease;
 }
 
 nav ul li{
@@ -277,7 +286,7 @@ margin:15px 0;
 }
 
 nav ul.active{
-display:flex;
+max-height:400px;
 }
 
 nav h2{
@@ -461,13 +470,14 @@ Our mission is to build high-quality modern structures.
 const toggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
 
-toggle.onclick = () => menu.classList.toggle("active");
-
+toggle.addEventListener("click", function(){
+menu.classList.toggle("active");
+});
 /* COUNTERS */
 
 const counters = document.querySelectorAll('.counter');
 
-const startCounter = counter => {
+const startCounter = (counter) => {
 
 const target = +counter.dataset.target;
 let count = 0;
@@ -480,7 +490,8 @@ if(count < target){
 count += inc;
 counter.innerText = Math.ceil(count);
 requestAnimationFrame(update);
-}else{
+}
+else{
 
 if(target == 100){
 counter.innerText = target + "%";
@@ -489,13 +500,15 @@ else{
 counter.innerText = target + "+";
 }
 
+}
+
 };
 
 update();
 
 };
 
-const observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver((entries) => {
 
 entries.forEach(entry => {
 
@@ -534,4 +547,5 @@ setInterval(moveSlide, 4000);
 </body>
 </html>
 ```
+
 

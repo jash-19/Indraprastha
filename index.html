@@ -42,13 +42,13 @@ line-height:1.6;
 /* HEADER */
 
 header{
-background:#1e293b;
+background:linear-gradient(90deg,#0f172a,#1e3a8a);
 color:white;
 padding:8px 15px;
 position:sticky;
 top:0;
 z-index:1000;
-box-shadow:0 2px 8px rgba(0,0,0,0.15);
+box-shadow:0 3px 10px rgba(0,0,0,0.25);
 }
 
 nav{
@@ -63,6 +63,7 @@ nav h2{
 font-size:24px;
 font-weight:700;
 letter-spacing:1px;
+color:#facc15;
 }
 
 nav ul{
@@ -79,7 +80,12 @@ color:white;
 text-decoration:none;
 font-size:15px;
 }
-
+  
+nav a:hover{
+color:#facc15;
+transition:0.3s;
+}
+  
 .menu-toggle{
 display:none;
 font-size:24px;
@@ -482,10 +488,15 @@ count += inc;
 counter.innerText = Math.ceil(count);
 requestAnimationFrame(update);
 }else{
+
+if(target == 100){
+counter.innerText = target + "%";
+}
+else{
 counter.innerText = target + "+";
 }
 
-};
+}
 
 update();
 
@@ -530,3 +541,4 @@ setInterval(moveSlide, 4000);
 </body>
 </html>
 ```
+

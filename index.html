@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,15 +41,15 @@ line-height:1.6;
 /* HEADER */
 
 header{
-background:linear-gradient(90deg,#0f172a,#1e3a8a);
+background:#0f172a;
 color:white;
-padding:8px 15px;
+padding:10px 20px;
 position:sticky;
 top:0;
 z-index:1000;
-box-shadow:0 3px 10px rgba(0,0,0,0.25);
+box-shadow:0 4px 12px rgba(0,0,0,0.25);
 }
-
+  
 nav{
 display:flex;
 justify-content:space-between;
@@ -74,16 +73,25 @@ display:flex;
 nav ul li{
 margin-left:15px;
 }
-
+  
+nav ul li a{
+display:block;
+padding:12px 20px;
+width:100%;
+text-align:center;
+}
+  
 nav a{
 color:white;
 text-decoration:none;
 font-size:15px;
-}
-  
-nav a:hover{
-color:#facc15;
+padding:6px 10px;
+border-radius:4px;
 transition:0.3s;
+}
+
+nav a:hover{
+background:#2563eb;
 }
   
 .menu-toggle{
@@ -270,13 +278,15 @@ display:block;
 
 nav ul{
 position:absolute;
-top:70px;
+top:60px;
 left:0;
 width:100%;
-background:#1e293b;
+background:#0f172a;
 flex-direction:column;
 align-items:center;
-display:none;
+max-height:0;
+overflow:hidden;
+transition:max-height 0.4s ease;
 }
 
 nav ul li{
@@ -284,7 +294,9 @@ margin:15px 0;
 }
 
 nav ul.active{
-display:flex;
+max-height:400px;
+}
+
 }
 
 nav h2{
@@ -468,7 +480,9 @@ Our mission is to build high-quality modern structures.
 const toggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
 
-toggle.onclick = () => menu.classList.toggle("active");
+toggle.addEventListener("click", function(){
+menu.classList.toggle("active");
+});
 
 /* COUNTERS */
 
@@ -541,4 +555,5 @@ setInterval(moveSlide, 4000);
 </body>
 </html>
 ```
+
 

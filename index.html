@@ -50,17 +50,19 @@ z-index:1000;
 box-shadow:0 3px 10px rgba(0,0,0,0.25); 
 }
 
+/* NAV LAYOUT */
+
 nav{
+max-width:1100px;
+margin:auto;
 display:flex;
 flex-direction:column;
 align-items:center;
-max-width:1100px;
-margin:auto;
-padding:5px 10px;
 position:relative;
+padding:8px 10px;
 }
 
-/* Company Name */
+/* COMPANY NAME */
 
 nav h2{
 font-family:'Orbitron', sans-serif;
@@ -68,10 +70,10 @@ font-size:24px;
 font-weight:700;
 letter-spacing:2px;
 text-align:center;
-margin-bottom:8px;
+margin-bottom:10px;
 }
 
-/* Menu */
+/* MENU */
 
 nav ul{
 list-style:none;
@@ -84,24 +86,22 @@ flex-wrap:wrap;
 nav ul li{
 margin:0;
 }
-  
-nav ul li a{
-display:block;
-padding:12px 20px;
-width:100%;
-text-align:center;
-}
-  
+
 nav a{
 color:white;
 text-decoration:none;
 font-size:15px;
 }
 
+/* HAMBURGER */
+
 .menu-toggle{
 display:none;
 font-size:24px;
 cursor:pointer;
+position:absolute;
+right:10px;
+top:10px;
 }
 
 /* HERO */
@@ -294,15 +294,12 @@ align-items:center;
 
 nav h2{
 font-size:18px;
-letter-spacing:1px;
 margin:0;
+text-align:center;
 }
 
 .menu-toggle{
 display:block;
-position:absolute;
-right:10px;
-top:8px;
 }
 
 nav ul{
@@ -336,7 +333,6 @@ height:250px;
 
 }
   
-
 </style>
 
 </head>
@@ -590,6 +586,7 @@ setInterval(moveSlide, 4000);
 </body>
 </html>
 ```
+
 
 
 

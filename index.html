@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,14 @@
 
 <meta name="description" content="Construction, consulting and infrastructure development services">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Preload hero image -->
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&auto=format&compress">
+
+<!-- Faster FontAwesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+media="print"
+onload="this.media='all'">
 
 <style>
 
@@ -19,6 +27,10 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
@@ -51,7 +63,6 @@ nav h2{
 font-size:24px;
 font-weight:700;
 letter-spacing:1px;
-animation:fadeIn 1.2s ease;
 }
 
 nav ul{
@@ -79,8 +90,9 @@ cursor:pointer;
 
 .hero{
 min-height:75vh;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+background:
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&auto=format&compress");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -94,31 +106,8 @@ padding:30px;
 .hero h1{
 font-size:42px;
 margin-bottom:10px;
-animation: fadeUp 1.2s ease;
 }
-  
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(-20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-  
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-    
+
 .hero p{
 font-size:18px;
 margin-bottom:20px;
@@ -168,7 +157,13 @@ transition:0.3s;
 transform:translateY(-8px);
 }
 
-/* STATS SECTION */
+.card i{
+font-size:40px;
+color:#2563eb;
+margin-bottom:15px;
+}
+
+/* STATS */
 
 .stats{
 display:grid;
@@ -190,35 +185,6 @@ color:#2563eb;
 margin-bottom:10px;
 }
 
-.card i{
-font-size:40px;
-color:#2563eb;
-margin-bottom:15px;
-}
-
-/* PROJECTS */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-}
-
-.gallery img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:10px;
-transition:0.4s;
-box-shadow:0 6px 15px rgba(0,0,0,0.15);
-}
-
-.gallery img:hover{
-transform:scale(1.06);
-}
-
-/* PROJECT SLIDER */
-
 /* PROJECT SLIDER */
 
 .slider{
@@ -239,7 +205,7 @@ flex-shrink:0;
 height:420px;
 object-fit:cover;
 }
-  
+
 /* ABOUT */
 
 .about{
@@ -295,11 +261,7 @@ box-shadow:0 4px 10px rgba(0,0,0,0.2);
 .menu-toggle{
 display:block;
 }
-  
-.slides img{
-height:250px;
-}
-  
+
 nav ul{
 position:absolute;
 top:70px;
@@ -318,13 +280,17 @@ margin:15px 0;
 nav ul.active{
 display:flex;
 }
-  
+
 nav h2{
 font-size:20px;
 }
-  
+
 .hero h1{
 font-size:28px;
+}
+
+.slides img{
+height:250px;
 }
 
 }
@@ -346,13 +312,11 @@ font-size:28px;
 </div>
 
 <ul id="menu">
-
 <li><a href="#home">Home</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="#projects">Projects</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
-
 </ul>
 
 </nav>
@@ -364,7 +328,6 @@ font-size:28px;
 <div>
 
 <h1>Building Modern Infrastructure</h1>
-
 <p>Reliable Construction & Engineering Experts</p>
 
 <a href="#contact" class="btn">Start Your Project</a>
@@ -393,72 +356,14 @@ font-size:28px;
 
 <div class="card">
 <i class="fa-solid fa-drafting-compass"></i>
-<h3>Architecture and Interior Design</h3>
+<h3>Architecture & Interior</h3>
 <p>Creative architectural planning solutions.</p>
 </div>
 
 </div>
 
 </section>
-  
-<section id="why">
 
-<h2>Why Choose Us</h2>
-
-<div class="services">
-
-<div class="card">
-<i class="fa-solid fa-medal"></i>
-<h3>High Quality Work</h3>
-<p>We use strong materials and modern construction methods.</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-clock"></i>
-<h3>On Time Delivery</h3>
-<p>Our team ensures projects are completed on schedule.</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-users"></i>
-<h3>Experienced Engineers</h3>
-<p>Our engineers and workers bring years of industry expertise.</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>Our Process</h2>
-
-<div class="services">
-
-<div class="card">
-<h3>Consultation</h3>
-<p>Understanding the client’s requirements and project scope.</p>
-</div>
-
-<div class="card">
-<h3>Planning</h3>
-<p>Architectural design, budgeting, and engineering planning.</p>
-</div>
-
-<div class="card">
-<h3>Construction</h3>
-<p>Efficient construction with strict quality control.</p>
-</div>
-
-<div class="card">
-<h3>Project Delivery</h3>
-<p>Final inspection and successful handover of the project.</p>
-</div>
-
-</div>
-
-</section>
-  
 <section id="projects">
 
 <h2>Our Projects</h2>
@@ -467,20 +372,20 @@ font-size:28px;
 
 <div class="slides">
 
-<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab">
+<img loading="lazy" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&auto=format&compress">
 
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd">
+<img loading="lazy" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&auto=format&compress">
 
-<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+<img loading="lazy" src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1200&auto=format&compress">
 
-<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5">
+<img loading="lazy" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&auto=format&compress">
 
 </div>
 
 </div>
 
 </section>
-  
+
 <section id="achievements">
 
 <h2>Our Achievements</h2>
@@ -505,6 +410,7 @@ font-size:28px;
 </div>
 
 </section>
+
 <section id="about">
 
 <h2>About Us</h2>
@@ -530,9 +436,7 @@ Our mission is to build high-quality modern structures.
 <div>
 
 <p><i class="fa-solid fa-phone"></i> +91 9481440700</p>
-
 <p><i class="fa-solid fa-envelope"></i> indraprastha.mahesh@gmail.com</p>
-
 <p><b>Click WhatsApp icon to message us instantly</b></p>
 
 </div>
@@ -553,84 +457,76 @@ Our mission is to build high-quality modern structures.
 
 <script>
 
+/* MOBILE MENU */
+
 const toggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
 
-toggle.addEventListener("click", () => {
-menu.classList.toggle("active");
-});
+toggle.onclick = () => menu.classList.toggle("active");
 
+/* COUNTERS */
 
 const counters = document.querySelectorAll('.counter');
 
-const startCounter = (counter) => {
+const startCounter = counter => {
 
-const target = +counter.getAttribute('data-target');
+const target = +counter.dataset.target;
 let count = 0;
 
-const updateCount = () => {
+const update = () => {
 
-const increment = target / 60;
+const inc = target / 60;
 
 if(count < target){
-count += increment;
+count += inc;
 counter.innerText = Math.ceil(count);
-setTimeout(updateCount,30);
-}
-else{
+requestAnimationFrame(update);
+}else{
 counter.innerText = target + "+";
 }
 
 };
 
-updateCount();
+update();
 
 };
 
-
-const observer = new IntersectionObserver((entries, observer) => {
+const observer = new IntersectionObserver(entries => {
 
 entries.forEach(entry => {
 
 if(entry.isIntersecting){
-
-const counter = entry.target;
-
-startCounter(counter);
-
-observer.unobserve(counter);
-
+startCounter(entry.target);
+observer.unobserve(entry.target);
 }
 
 });
 
 });
 
+counters.forEach(counter => observer.observe(counter));
 
-counters.forEach(counter => {
-observer.observe(counter);
-});
-  
-/* PROJECT AUTO SLIDER */
+/* SLIDER */
 
 const slides = document.querySelector(".slides");
 const slideImages = document.querySelectorAll(".slides img");
 
-let currentIndex = 0;
+let index = 0;
 
 function moveSlide(){
 
-currentIndex++;
+index++;
 
-if(currentIndex >= slideImages.length){
-currentIndex = 0;
-}
+if(index >= slideImages.length) index = 0;
 
-slides.style.transform = "translateX(-" + currentIndex * 100 + "%)";
+slides.style.transform = `translateX(-${index * 100}%)`;
 
 }
 
-setInterval(moveSlide, 3500);
+setInterval(moveSlide, 4000);
+
 </script>
 
-
+</body>
+</html>
+```

@@ -217,6 +217,47 @@ box-shadow:0 6px 15px rgba(0,0,0,0.15);
 transform:scale(1.06);
 }
 
+/* PROJECT SLIDER */
+
+.slider{
+width:100%;
+overflow:hidden;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+
+.slides{
+display:flex;
+width:400%;
+animation:slide 16s infinite;
+}
+
+.slides img{
+width:100%;
+height:420px;
+object-fit:cover;
+}
+
+@keyframes slide{
+
+0%{transform:translateX(0);}
+
+25%{transform:translateX(0);}
+
+30%{transform:translateX(-100%);}
+
+50%{transform:translateX(-100%);}
+
+55%{transform:translateX(-200%);}
+
+75%{transform:translateX(-200%);}
+
+80%{transform:translateX(-300%);}
+
+100%{transform:translateX(-300%);}
+
+}
+  
 /* ABOUT */
 
 .about{
@@ -272,7 +313,11 @@ box-shadow:0 4px 10px rgba(0,0,0,0.2);
 .menu-toggle{
 display:block;
 }
-
+  
+.slides img{
+height:250px;
+}
+  
 nav ul{
 position:absolute;
 top:70px;
@@ -436,36 +481,42 @@ font-size:28px;
 
 <h2>Our Projects</h2>
 
-<div class="gallery">
+<div class="slider">
+
+<div class="slides">
 
 <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab">
 
 <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd">
-  
+
 <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+
+<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5">
+
+</div>
 
 </div>
 
 </section>
   
-<section>
+<section id="achievements">
 
 <h2>Our Achievements</h2>
 
 <div class="stats">
 
 <div class="stat-card">
-<h3>75+</h3>
+<h3 class="counter" data-target="50">0</h3>
 <p>Projects Completed</p>
 </div>
 
 <div class="stat-card">
-<h3>20+</h3>
+<h3 class="counter" data-target="10">0</h3>
 <p>Years Experience</p>
 </div>
 
 <div class="stat-card">
-<h3>100%</h3>
+<h3 class="counter" data-target="100">0</h3>
 <p>Client Satisfaction</p>
 </div>
 
@@ -527,12 +578,56 @@ toggle.addEventListener("click", () => {
 menu.classList.toggle("active");
 });
 
+
+const counters = document.querySelectorAll('.counter');
+
+const startCounter = (counter) => {
+
+const target = +counter.getAttribute('data-target');
+let count = 0;
+
+const updateCount = () => {
+
+const increment = target / 60;
+
+if(count < target){
+count += increment;
+counter.innerText = Math.ceil(count);
+setTimeout(updateCount,30);
+}
+else{
+counter.innerText = target + "+";
+}
+
+};
+
+updateCount();
+
+};
+
+
+const observer = new IntersectionObserver((entries, observer) => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+const counter = entry.target;
+
+startCounter(counter);
+
+observer.unobserve(counter);
+
+}
+
+});
+
+});
+
+
+counters.forEach(counter => {
+observer.observe(counter);
+});
+
 </script>
-
-</body>
-</html>
-
-
-
-
 

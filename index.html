@@ -281,7 +281,45 @@ border-radius:50%;
 font-size:26px;
 box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
+  
+/* DESKTOP HEADER LAYOUT */
 
+@media(min-width:769px){
+
+nav{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+/* Company name */
+
+nav h2{
+font-size:26px;
+margin-bottom:18px;
+}
+
+/* Menu */
+
+nav ul{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+padding:0;
+margin:0 auto;
+}
+
+/* Hide hamburger */
+
+.menu-toggle{
+display:none;
+}
+
+}
+  
 /* MOBILE */
 
 @media(max-width:768px){
@@ -586,6 +624,7 @@ setInterval(moveSlide, 4000);
 </body>
 </html>
 ```
+
 
 
 

@@ -8,9 +8,244 @@
 
 <title>Indraprastha Consulting & Constructions</title>
 
-<link rel="stylesheet" href="style.css">
+<meta name="description" content="Construction, consulting and infrastructure development services">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f5f7fa;
+color:#333;
+line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+background:#1e293b;
+color:white;
+padding:15px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1100px;
+margin:auto;
+}
+
+nav h2{
+font-size:20px;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+}
+
+nav ul li{
+margin-left:15px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:15px;
+}
+
+.menu-toggle{
+display:none;
+font-size:24px;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+min-height:70vh;
+background:linear-gradient(#1e3a8a,#2563eb);
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:30px;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:20px;
+}
+
+.btn{
+background:white;
+color:#2563eb;
+padding:12px 25px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* SECTION */
+
+section{
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+font-size:30px;
+}
+
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card i{
+font-size:40px;
+color:#2563eb;
+margin-bottom:15px;
+}
+
+/* PROJECTS */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* ABOUT */
+
+.about{
+text-align:center;
+max-width:800px;
+margin:auto;
+}
+
+/* CONTACT */
+
+.contact{
+display:flex;
+justify-content:center;
+}
+
+.contact div{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+max-width:400px;
+text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+background:#1e293b;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:18px;
+border-radius:50%;
+font-size:26px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+nav ul{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#1e293b;
+flex-direction:column;
+align-items:center;
+display:none;
+}
+
+nav ul li{
+margin:15px 0;
+}
+
+nav ul.active{
+display:flex;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+}
+
+</style>
 
 </head>
 
@@ -18,81 +253,71 @@
 
 <header>
 
-<div class="logo">Indraprastha</div>
+<nav>
 
-<nav id="nav">
+<h2>Indraprastha Constructions</h2>
 
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+<div class="menu-toggle" id="menu-toggle">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+<ul id="menu">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
 
 </nav>
 
-<div class="menu" onclick="toggleMenu()">☰</div>
-
 </header>
-
 
 <section class="hero" id="home">
 
-<h1 class="fade">Building Modern Infrastructure</h1>
+<div>
 
-<p class="fade">Trusted Construction & Consulting Experts</p>
+<h1>Building Modern Infrastructure</h1>
 
-<a href="#contact" class="btn fade">Start Your Project</a>
+<p>Reliable Construction & Engineering Experts</p>
 
-</section>
+<a href="#contact" class="btn">Start Your Project</a>
 
-
-<section class="about reveal" id="about">
-
-<h2>About Us</h2>
-
-<p>
-
-Indraprastha Consulting & Constructions provides professional
-construction and infrastructure consulting services. We focus on
-quality, innovation, and timely delivery of projects.
-
-</p>
+</div>
 
 </section>
 
-
-<section class="services reveal" id="services">
+<section id="services">
 
 <h2>Our Services</h2>
 
-<div class="services-grid">
+<div class="services">
 
 <div class="card">
-<h3>Construction</h3>
-<p>Residential and commercial construction services.</p>
+<i class="fa-solid fa-building"></i>
+<h3>Building Construction</h3>
+<p>Residential and commercial building construction.</p>
 </div>
 
 <div class="card">
-<h3>Consulting</h3>
-<p>Engineering and infrastructure consulting solutions.</p>
+<i class="fa-solid fa-helmet-safety"></i>
+<h3>Project Consulting</h3>
+<p>Engineering consulting and project planning.</p>
 </div>
 
 <div class="card">
-<h3>Architecture</h3>
-<p>Smart and efficient architectural planning.</p>
-</div>
-
-<div class="card">
-<h3>Project Management</h3>
-<p>Complete project execution and management.</p>
+<i class="fa-solid fa-drafting-compass"></i>
+<h3>Architecture Design</h3>
+<p>Creative architectural planning solutions.</p>
 </div>
 
 </div>
 
 </section>
 
-
-<section class="projects reveal" id="projects">
+<section id="projects">
 
 <h2>Our Projects</h2>
 
@@ -108,25 +333,41 @@ quality, innovation, and timely delivery of projects.
 
 </section>
 
+<section id="about">
 
-<section class="contact reveal" id="contact">
+<h2>About Us</h2>
 
-<h2>Contact Us</h2>
+<div class="about">
 
-<form class="contact-form">
+<p>
+Indraprastha Consulting & Constructions delivers reliable
+construction and infrastructure development services.
+Our mission is to build high-quality modern structures.
+</p>
 
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Your Email">
-
-<textarea placeholder="Your Message"></textarea>
-
-<button>Send Message</button>
-
-</form>
+</div>
 
 </section>
 
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<div class="contact">
+
+<div>
+
+<p><i class="fa-solid fa-phone"></i> +91 9876543210</p>
+
+<p><i class="fa-solid fa-envelope"></i> info@indraprastha.com</p>
+
+<p><b>Click WhatsApp icon to message us instantly</b></p>
+
+</div>
+
+</div>
+
+</section>
 
 <footer>
 
@@ -134,17 +375,20 @@ quality, innovation, and timely delivery of projects.
 
 </footer>
 
-
-<!-- WhatsApp Button -->
-
-<a href="https://wa.me/919876543210?text=Hello%20I%20want%20construction%20consultation"
-class="whatsapp" target="_blank">
-
-💬
-
+<a href="https://wa.me/919876543210" class="whatsapp">
+<i class="fa-brands fa-whatsapp"></i>
 </a>
 
-<script src="script.js"></script>
+<script>
+
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+
+toggle.addEventListener("click", () => {
+menu.classList.toggle("active");
+});
+
+</script>
 
 </body>
 </html>

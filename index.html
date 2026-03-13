@@ -219,6 +219,8 @@ transform:scale(1.06);
 
 /* PROJECT SLIDER */
 
+/* PROJECT SLIDER */
+
 .slider{
 width:100%;
 overflow:hidden;
@@ -228,34 +230,14 @@ box-shadow:0 6px 15px rgba(0,0,0,0.15);
 
 .slides{
 display:flex;
-width:400%;
-animation:slide 16s infinite;
+transition:transform 0.8s ease-in-out;
 }
 
 .slides img{
 width:100%;
+flex-shrink:0;
 height:420px;
 object-fit:cover;
-}
-
-@keyframes slide{
-
-0%{transform:translateX(0);}
-
-25%{transform:translateX(0);}
-
-30%{transform:translateX(-100%);}
-
-50%{transform:translateX(-100%);}
-
-55%{transform:translateX(-200%);}
-
-75%{transform:translateX(-200%);}
-
-80%{transform:translateX(-300%);}
-
-100%{transform:translateX(-300%);}
-
 }
   
 /* ABOUT */
@@ -506,12 +488,12 @@ font-size:28px;
 <div class="stats">
 
 <div class="stat-card">
-<h3 class="counter" data-target="50">0</h3>
+<h3 class="counter" data-target="75">0</h3>
 <p>Projects Completed</p>
 </div>
 
 <div class="stat-card">
-<h3 class="counter" data-target="10">0</h3>
+<h3 class="counter" data-target="20">0</h3>
 <p>Years Experience</p>
 </div>
 
@@ -628,6 +610,27 @@ observer.unobserve(counter);
 counters.forEach(counter => {
 observer.observe(counter);
 });
+  
+/* PROJECT AUTO SLIDER */
 
+const slides = document.querySelector(".slides");
+const slideImages = document.querySelectorAll(".slides img");
+
+let currentIndex = 0;
+
+function moveSlide(){
+
+currentIndex++;
+
+if(currentIndex >= slideImages.length){
+currentIndex = 0;
+}
+
+slides.style.transform = "translateX(-" + currentIndex * 100 + "%)";
+
+}
+
+setInterval(moveSlide, 3500);
 </script>
+
 

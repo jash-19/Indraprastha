@@ -168,6 +168,28 @@ transition:0.3s;
 transform:translateY(-8px);
 }
 
+/* STATS SECTION */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+text-align:center;
+}
+
+.stat-card{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stat-card h3{
+font-size:32px;
+color:#2563eb;
+margin-bottom:10px;
+}
+
 .card i{
 font-size:40px;
 color:#2563eb;
@@ -351,14 +373,70 @@ font-size:28px;
 </div>
 
 </section>
+  
+<section id="why">
 
+<h2>Why Choose Us</h2>
+
+<div class="services">
+
+<div class="card">
+<i class="fa-solid fa-medal"></i>
+<h3>High Quality Work</h3>
+<p>We use strong materials and modern construction methods.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-clock"></i>
+<h3>On Time Delivery</h3>
+<p>Our team ensures projects are completed on schedule.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-users"></i>
+<h3>Experienced Engineers</h3>
+<p>Our engineers and workers bring years of industry expertise.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Our Process</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Consultation</h3>
+<p>Understanding the client’s requirements and project scope.</p>
+</div>
+
+<div class="card">
+<h3>Planning</h3>
+<p>Architectural design, budgeting, and engineering planning.</p>
+</div>
+
+<div class="card">
+<h3>Construction</h3>
+<p>Efficient construction with strict quality control.</p>
+</div>
+
+<div class="card">
+<h3>Project Delivery</h3>
+<p>Final inspection and successful handover of the project.</p>
+</div>
+
+</div>
+
+</section>
+  
 <section id="projects">
 
 <h2>Our Projects</h2>
 
 <div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
 
 <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab">
 
@@ -369,7 +447,31 @@ font-size:28px;
 </div>
 
 </section>
+  
+<section>
 
+<h2>Our Achievements</h2>
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>75+</h3>
+<p>Projects Completed</p>
+</div>
+
+<div class="stat-card">
+<h3>20+</h3>
+<p>Years Experience</p>
+</div>
+
+<div class="stat-card">
+<h3>100%</h3>
+<p>Client Satisfaction</p>
+</div>
+
+</div>
+
+</section>
 <section id="about">
 
 <h2>About Us</h2>
@@ -429,6 +531,7 @@ menu.classList.toggle("active");
 
 </body>
 </html>
+
 
 
 
